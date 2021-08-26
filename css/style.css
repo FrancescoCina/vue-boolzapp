@@ -20,29 +20,35 @@
     background-color: yellow;
 }
 
+.bg-heavenly{
+    background-color: #8edafc;
+}
+
+.heavenly{
+    color: #8edafc;
+}
+
+.grey{
+    color:grey;
+}
+
 .h-10{
     height: 10%;
-    border: 1px solid #000;
 }
 
-.h-15{
-    height: 15%;
-    border: 1px solid #000;
+.h-12{
+    height: 12%;
 
 }
 
-.h-7{
-    border: 1px solid #000;
-    height: 7%;
+.h-7{    height: 7%;
 }
 
 #contact-menu .h-remaining{
-    border: 1px solid #000;
-    height: calc(100% - 32%);
+    height: calc(100% - 30%);
 }
 
 #chat-menu .h-remaining{
-    border: 1px solid #000;
     height: calc(100% - 20%);
 }
 
@@ -52,4 +58,13 @@
 
 h1{
     font-size:75px;
+}
+
+.username-box{
+    width: 50px;
+    height: 100%;
+}
+
+.user-img{
+    border-radius: 50%;
 }

@@ -20,3 +20,36 @@
     background-color: yellow;
 }
 
+.h-10{
+    height: 10%;
+    border: 1px solid #000;
+}
+
+.h-15{
+    height: 15%;
+    border: 1px solid #000;
+
+}
+
+.h-7{
+    border: 1px solid #000;
+    height: 7%;
+}
+
+#contact-menu .h-remaining{
+    border: 1px solid #000;
+    height: calc(100% - 32%);
+}
+
+#chat-menu .h-remaining{
+    border: 1px solid #000;
+    height: calc(100% - 20%);
+}
+
+#chat-menu main{
+    overflow: auto;
+}
+
+h1{
+    font-size:75px;
+}

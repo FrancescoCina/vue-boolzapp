@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.bg-linear{
+    background: linear-gradient(to top, #DADBD4, #009689);
+    height: 100vh;
+}
+
+.bg-blue{
+    background-color: blue;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.bg-yellow{
+    background-color: yellow;
+}
+

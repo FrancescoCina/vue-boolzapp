@@ -1,5 +1,5 @@
 const user = {
-  name: 'Nome Utente',
+  name: 'Francesco',
   avatar: '_io',
 };
 const contacts = [

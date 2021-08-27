@@ -112,3 +112,20 @@ li{
 .ps-2-5rem{
     padding-left: 2.5rem;
 }
+
+
+.message{
+    min-width: 250px;
+    border-radius: 10px;
+}
+
+.sent{
+    /* justify-content: flex-end; */
+    background-color: #d5f9ba;
+}
+
+.received{
+    /* justify-content: flex-start; */
+    background-color: #fff;
+
+}

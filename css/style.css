@@ -12,6 +12,10 @@
     background-color: blue;
 }
 
+.bg-light-grey{
+    background-color:#eaeaea;
+}
+
 .bg-red{
     background-color: red;
 }
@@ -36,15 +40,20 @@
     height: 10%;
 }
 
-.h-7{    height: 7%;
+.h-70p{   
+    height: 70px;
+}
+
+.h-50p{
+    height: 50px;
 }
 
 #contact-menu .h-remaining{
-    height: calc(100% - 20%);
+    height: calc(100% - 190px);
 }
 
 #chat-menu .h-remaining{
-    height: calc(100% - 20%);
+    height: calc(100% - 140px);
 }
 
 #chat-menu main{
@@ -68,9 +77,6 @@ li{
     list-style-type: none;
 }
 
-.overflow-scroll{
-    overflow-y: scroll;
-}
 
 .border-circle{
     border-radius: 50%;
@@ -78,4 +84,8 @@ li{
 
 .bell-icon{
     width: 35px;
+}
+
+.clickable{
+    cursor: pointer;
 }

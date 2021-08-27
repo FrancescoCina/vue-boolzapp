@@ -23,18 +23,18 @@
     <div id="root">
         <div class="container-fluid bg-linear">
             <div class="row justify-content-center h-100">
-                <div class="col-10 bg-blue my-5">
+                <div class="col-10 bg-white my-5">
                     <div class="row h-100">
                         <!-- Menu contatti  -->
-                        <div id="contact-menu" class="col-4 h-100 bg-yellow">
+                        <div id="contact-menu" class="col-4 h-100">
                             <!-- UserName box -->
-                            <div class="h-10 d-flex justify-content-between">
-                                <div class="username-box d-flex justify-content-start align-items-center">
+                            <div class="h-10 row">
+                                <div class="col-4 username-box d-flex justify-content-start align-items-center">
                                     <img src="./img/avatar_1.jpg" alt="Avatar 1" class="img-fluid" width="50px">
                                     <h4>Francesco</h4>
                                 </div>
-                                <div
-                                    class="username-icons-container d-flex justify-content-end align-items-center fs-4">
+                                <div class="col-4"></div>
+                                <div class="col-4 username-icons-container d-flex align-items-center fs-4 grey">
                                     <div class="icons">
                                         <i class="fas fa-sync"></i>
                                         <i class="fas fa-comment-alt px-3"></i>
@@ -43,14 +43,19 @@
                                 </div>
                             </div>
                             <!-- Section Activate Notifications -->
-                            <div id="notifications-section" class="h-12 bg-heavenly d-flex align-items-center">
-                                <div class="ring-icon fs-4 bg-white rounded-circle p-2">
-                                    <i class="fas fa-bell-slash heavenly"></i>
+                            <div id="notifications-section" class="h-10 row bg-heavenly d-flex align-items-center">
+                                <div class="col-3 fs-4">
+                                    <div class="bell-icon bg-white rounded-circle p-2"><i
+                                            class="fas fa-bell-slash heavenly"></i>
+                                    </div>
                                 </div>
-                                <div class="text-start">
-                                    <p class="fw-bold">Ricevi notifiche di nuovi messaggi</p>
-                                    <span class="grey"><u>Attiva notifiche desktop</u></span>
+                                <div class="col-6 text-start">
+                                    <p>Ricevi notifiche di nuovi messaggi
+                                        <br>
+                                        <span class="grey fw-light"><u>Attiva notifiche desktop</u></span>
+                                    </p>
                                 </div>
+                                <div class="col-3"></div>
                             </div>
                             <!-- Input Search -->
                             <div class="input-group mb-3 h-7">
@@ -60,20 +65,23 @@
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
                             <!-- Contacts List -->
-                            <div class="h-remaining"></div>
+                            <div class="h-remaining overflow-scroll">
+                                <ul>
+                                    <li>
+                                        <div class="bg-white row d-flex">
+                                            <div class="col-3 border-circle">
+                                                <img src="./img/avatar_3.jpg" class="img-fluid" alt="Avatar Michele"
+                                                    width="50">
+                                            </div>
+                                            <div class="col-3 name-user">
+                                                <p class="fw-bold fs-5">Michele</p>
+                                            </div>
+                                            <div class="col-6"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div id="chat-menu" class="col-8 h-100 bg-red">
                             <header class="h-10">

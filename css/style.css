@@ -36,16 +36,11 @@
     height: 10%;
 }
 
-.h-12{
-    height: 12%;
-
-}
-
 .h-7{    height: 7%;
 }
 
 #contact-menu .h-remaining{
-    height: calc(100% - 30%);
+    height: calc(100% - 20%);
 }
 
 #chat-menu .h-remaining{
@@ -67,4 +62,20 @@ h1{
 
 .user-img{
     border-radius: 50%;
+}
+
+li{
+    list-style-type: none;
+}
+
+.overflow-scroll{
+    overflow-y: scroll;
+}
+
+.border-circle{
+    border-radius: 50%;
+}
+
+.bell-icon{
+    width: 35px;
 }

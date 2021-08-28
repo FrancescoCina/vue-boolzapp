@@ -56,22 +56,6 @@
                                         <span class="grey fw-light"><u>Attiva notifiche desktop</u></span>
                                     </div>
                                 </div>
-
-
-
-
-                                <!-- <div class="col-3 p-0 fs-4">
-                                    <div class="bell-icon bg-white rounded-circle p-2"><i
-                                            class="fas fa-bell-slash heavenly"></i>
-                                    </div>
-                                </div>
-                                <div class="col-6 p-0">
-                                    <p>Ricevi notifiche di nuovi messaggi
-                                        <br>
-                                        <span class="grey fw-light"><u>Attiva notifiche desktop</u></span>
-                                    </p>
-                                </div>
-                                <div class="col-3 p-0"></div> -->
                             </section>
                             <!-- Input Search -->
                             <section id="input-search" class="input-group mb-3 h-50p">
@@ -98,7 +82,7 @@
                                 <div class="col-4 d-flex align-items-center">
                                     <img src="./img/avatar_1.jpg" alt="Avatar 1" class="img-fluid rounded-circle"
                                         width="50">
-                                    <h4 class="ms-2">Francesco <br><small class="grey fw-light fs-12">Ultimo accesso
+                                    <h4 class="ms-2">Michele<br><small class="grey fw-light fs-12">Ultimo accesso
                                             oggi
                                             alle</small>
                                     </h4>
@@ -111,17 +95,18 @@
                             </header>
                             <!-- Chat Body -->
                             <main class="h-remaining bg-img-chat-menu">
-                                <div class="row pt-5 pe-5 justify-content-end">
-                                    <div class="col-auto d-flex message sent">
-                                        <p class="p-2">Hai portato a spasso il cane?</p>
+                                <div v-for="contact in contacts" class="row pt-5 px-5"
+                                    :class="changePositionMessage(contact.messages[0].status)">
+                                    <div class="col-auto d-flex message" :class="contact.messages[0].status">
+                                        <p class="p-2">{{contact.messages[0].message}}</p>
 
                                     </div>
                                 </div>
-                                <div class="row pt-3 ps-5 justify-content-start">
+                                <!-- <div class="row pt-3 ps-5 justify-content-start">
                                     <div class="col-auto d-flex message received">
                                         <p class="p-2">Tutto fatto!</p>
                                     </div>
-                                </div>
+                                </div> -->
                             </main>
                             <!-- Footer -->
                             <footer class="row g-0 align-items-center justify-content-center h-70p bg-light-grey">

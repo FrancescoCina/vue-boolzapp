@@ -68,7 +68,7 @@
                             <!-- Contacts List -->
                             <section id="contact-list" class="h-remaining container">
                                 <div v-if="searchAndShowInContactList(contact.name)" v-for="(contact,index) in contacts"
-                                    class="row bg-white py-2">
+                                    :key="contact.name+contact.avatar" class="row bg-white py-2">
                                     <div @click="changeConversation(contact, index, contacts)"
                                         class="col d-flex align-items-center contact clickable">
                                         <img :src="`./img/avatar${contact.avatar}.jpg`" class="img-fluid rounded-circle"
@@ -82,7 +82,7 @@
                         <div id="chat-menu" class="col-8 g-0 h-100">
                             <!-- Header -->
                             <header class="row justify-content-between g-0 h-70p bg-light-grey">
-                                <div v-for="contact in contacts">
+                                <div v-for="contact in contacts" :key="contact.name+contact.avatar">
                                     <div v-if="contact.visible === true" class="col-4 d-flex align-items-center">
                                         <img :src="`./img/avatar${contact.avatar}.jpg`" :alt="contact.name"
                                             class="img-fluid rounded-circle" width="50">
@@ -101,11 +101,13 @@
                             </header>
                             <!-- Chat Body -->
                             <main class="h-remaining bg-img-chat-menu">
-                                <div v-for="contact in contacts">
+                                <div v-for="contact in contacts" :key="contact.name+contact.avatar">
                                     <div class="row pt-5 px-5" v-if="contact.visible === true"
-                                        v-for="msg in contact.messages" :class="changePositionMessage(msg.status)">
+                                        v-for="(msg,index) in contact.messages" :key="msg.status+index"
+                                        :class="changePositionMessage(msg.status)">
                                         <div class="col-auto d-flex message" :class="msg.status">
                                             <p class="p-2">{{msg.message}}</p>
+                                            <time class="grey align-self-end">{{msg.date}}</time>
                                         </div>
                                     </div>
                                 </div>

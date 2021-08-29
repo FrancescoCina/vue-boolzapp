@@ -15,7 +15,6 @@ const root = new Vue({
         },
         changeConversation(contact, index, contacts) {
             contacts.forEach(singleContact => {
-
                 for (property in singleContact) {
                     if (singleContact[property] === true) {
                         singleContact[property] = false
@@ -25,13 +24,16 @@ const root = new Vue({
             contact.visible = true;
         },
         sendMessage(contacts) {
+            // let msgInfo = [];
             contacts.forEach(singleContact => {
                 for (property in singleContact) {
                     if (singleContact[property] === true) {
-                        singleContact.messages.push(this.messageUser);
-                        setTimeout(() => {
-                            singleContact.messages.push(this.autoAnswer);
-                        }, 1000)
+                        if (this.messageUser.message !== "") {
+                            singleContact.messages.push(this.messageUser);
+                            setTimeout(() => {
+                                singleContact.messages.push(this.autoAnswer);
+                            }, 1000)
+                        }
                     }
                 }
             })

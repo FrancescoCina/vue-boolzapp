@@ -1,4 +1,5 @@
 const data = {
+    searchContact: "",
     messageUser: {
         date: '10/01/2020 15:30:55',
         message: "",

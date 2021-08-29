@@ -35,6 +35,14 @@ const root = new Vue({
                     }
                 }
             })
+        },
+        searchAndShowInContactList(element) {
+            if (this.searchContact.trim() === "") {
+                return true;
+            }
+            const simpleSearch = this.searchContact.trim().toLowerCase();
+            element = element.toLowerCase();
+            return element.includes(simpleSearch);
         }
     },
 })

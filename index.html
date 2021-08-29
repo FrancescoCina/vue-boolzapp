@@ -61,12 +61,14 @@
                             <section id="input-search" class="input-group mb-3 h-50p">
                                 <span class="input-group-text bg-white" id="basic-addon1"><i
                                         class="fas fa-search grey"></i></span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                                    aria-label="Username" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" v-model="searchContact"
+                                    placeholder="Cerca o inizia una nuova chat" aria-label="Username"
+                                    aria-describedby="basic-addon1">
                             </section>
                             <!-- Contacts List -->
                             <section id="contact-list" class="h-remaining container">
-                                <div v-for="(contact,index) in contacts" class="row bg-white py-2">
+                                <div v-if="searchAndShowInContactList(contact.name)" v-for="(contact,index) in contacts"
+                                    class="row bg-white py-2">
                                     <div @click="changeConversation(contact, index, contacts)"
                                         class="col d-flex align-items-center contact clickable">
                                         <img :src="`./img/avatar${contact.avatar}.jpg`" class="img-fluid rounded-circle"

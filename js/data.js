@@ -1,5 +1,14 @@
 const data = {
-    generalIndex: 0,
+    messageUser: {
+        date: '10/01/2020 15:30:55',
+        message: "",
+        status: 'sent',
+    },
+    autoAnswer: {
+        date: '10/01/2020 15:30:55',
+        message: "Ok",
+        status: 'received',
+    },
     user: {
         name: 'Francesco',
         avatar: '_io',

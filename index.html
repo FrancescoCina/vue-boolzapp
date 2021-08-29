@@ -114,7 +114,8 @@
                                     <i class="far fa-smile"></i>
                                 </div>
                                 <div class="ps-3 col-10">
-                                    <input class="text-message rounded-3px border-0" type="text"
+                                    <input @keyup.enter="sendMessage(contacts)" v-model="messageUser.message"
+                                        class="text-message rounded-3px border-0" type="text"
                                         placeholder="Scrivi un messaggio">
                                 </div>
                                 <div class="ps-4 col-1 fs-3">

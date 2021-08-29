@@ -29,13 +29,12 @@ const root = new Vue({
                 for (property in singleContact) {
                     if (singleContact[property] === true) {
                         singleContact.messages.push(this.messageUser);
+                        setTimeout(() => {
+                            singleContact.messages.push(this.autoAnswer);
+                        }, 1000)
                     }
                 }
-                setTimeout(() => {
-                    singleContact.messages.push(this.autoAnswer);
-                }, 1000)
             })
-            // this.messageUser.message = "";
         }
     },
 })

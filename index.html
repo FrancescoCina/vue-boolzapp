@@ -23,10 +23,10 @@
 </head>
 
 <body>
-    <div id="root">
+    <div id="root" class="viewport-height">
         <div class="container-fluid bg-linear">
-            <div class="row justify-content-center h-100">
-                <div class="col-10 bg-white my-5">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-10 bg-white my-5 viewport-height-92">
                     <div class="row h-100">
                         <!------------------------------- MENU CONTATTI ---------------------------------------->
                         <div id="contact-menu" class="col-4 p-0 h-100">
@@ -82,9 +82,9 @@
                             </section>
                         </div>
                         <!------------------------------- MENU CHAT ---------------------------------------->
-                        <div id="chat-menu" class="col-8 g-0 h-100">
+                        <div id="chat-menu" class="col-8 h-100">
                             <!-- Header -->
-                            <header class="row justify-content-between g-0 h-70p bg-light-grey">
+                            <header class="row justify-content-between h-70p bg-light-grey">
 
                                 <div class="col-4 d-flex align-items-center">
                                     <img :src="`./img/avatar${contacts[currentContact].avatar}.jpg`"
@@ -105,8 +105,8 @@
                                 </div>
                             </header>
                             <!-- Chat Body -->
-                            <main class="h-remaining bg-img-chat-menu">
-                                <div>
+                            <main class="row h-remaining bg-img-chat-menu overflow-y-auto">
+                                <div class="col-12">
                                     <div class="row pt-5 px-5" v-for="(msg,index) in contacts[currentContact].messages"
                                         :key="msg.status+index" :class="changePositionMessage(msg.status)">
                                         <div class="col-auto d-flex message" :class="msg.status">
@@ -118,7 +118,7 @@
                                     </div>
                             </main>
                             <!-- Footer -->
-                            <footer class="row g-0 align-items-center justify-content-center h-70p bg-light-grey">
+                            <footer class="row align-items-center justify-content-center h-70p bg-light-grey z-3">
                                 <div class="ps-2-5rem col-1 fs-3">
                                     <i class="clickable far fa-smile"></i>
                                 </div>

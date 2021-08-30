@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+.viewport-height{
+    height: 100vh;
+}
+
+.viewport-height-92{
+    height: 92vh;
+}
+
 .bg-linear{
     background: linear-gradient(to top, #DADBD4, #009689);
     height: 100vh;
@@ -124,4 +132,12 @@ li{
 
 .contact:hover{
     background-color:#eaeaea;
+}
+
+.z-3{
+    z-index:2;
+}
+
+.overflow-y-auto{
+    overflow-y: auto;
 }

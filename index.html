@@ -41,9 +41,9 @@
                                 <div
                                     class="col-4 username-icons-container d-flex justify-content-end align-items-center fs-4 grey">
                                     <div class="icons">
-                                        <i class="fas fa-sync"></i>
-                                        <i class="fas fa-comment-alt px-3"></i>
-                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="clickable fas fa-sync"></i>
+                                        <i class="clickable fas fa-comment-alt px-3"></i>
+                                        <i class="clickable fas fa-ellipsis-v"></i>
                                     </div>
                                 </div>
                             </section>
@@ -98,9 +98,9 @@
                                 </div>
 
                                 <div class="col-4 d-flex align-items-center justify-content-end grey fs-4">
-                                    <i class="fas fa-search"></i>
-                                    <i class="fas fa-paperclip mx-4"></i>
-                                    <i class="fas fa-ellipsis-v me-3"></i>
+                                    <i class="clickable fas fa-search"></i>
+                                    <i class="clickable fas fa-paperclip mx-4"></i>
+                                    <i class="clickable fas fa-ellipsis-v me-3"></i>
                                 </div>
                             </header>
                             <!-- Chat Body -->
@@ -110,6 +110,8 @@
                                         :key="msg.status+index" :class="changePositionMessage(msg.status)">
                                         <div class="col-auto d-flex message" :class="msg.status">
                                             <p class="p-2">{{msg.message}}</p>
+                                            <span class="clickable"><i @click="deleteMessage(index)"
+                                                    class="fas fa-times"></i></span>
                                             <time class="grey align-self-end">{{msg.date}}</time>
                                         </div>
                                     </div>
@@ -117,7 +119,7 @@
                             <!-- Footer -->
                             <footer class="row g-0 align-items-center justify-content-center h-70p bg-light-grey">
                                 <div class="ps-2-5rem col-1 fs-3">
-                                    <i class="far fa-smile"></i>
+                                    <i class="clickable far fa-smile"></i>
                                 </div>
                                 <div class="ps-3 col-10">
                                     <input @keyup.enter="sendMessage" v-model.trim="messageText"
@@ -125,7 +127,7 @@
                                         placeholder="Scrivi un messaggio">
                                 </div>
                                 <div class="ps-4 col-1 fs-3">
-                                    <i class="fas fa-microphone"></i>
+                                    <i class="clickable fas fa-microphone"></i>
                                 </div>
                             </footer>
                         </div>

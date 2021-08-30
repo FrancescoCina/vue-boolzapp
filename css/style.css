@@ -114,12 +114,10 @@ li{
 }
 
 .sent{
-    justify-content: flex-end;
     background-color: #d5f9ba;
 }
 
 .received{
-    justify-content: flex-start;
     background-color: #fff;
 
 }

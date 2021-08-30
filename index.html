@@ -64,12 +64,12 @@
                                 <span class="input-group-text bg-white" id="basic-addon1"><i
                                         class="fas fa-search grey"></i></span>
                                 <input type="text" class="form-control" v-model="searchContact"
-                                    placeholder="Cerca o inizia una nuova chat" aria-label="Username"
-                                    aria-describedby="basic-addon1">
+                                    @keyup="searchAndShowInContactList" placeholder="Cerca o inizia una nuova chat"
+                                    aria-label="Username" aria-describedby="basic-addon1">
                             </section>
                             <!-- Contacts List -->
                             <section id="contact-list" class="h-remaining container">
-                                <div v-if="searchAndShowInContactList(contact.name)" v-for="(contact,index) in contacts"
+                                <div v-if="contact.visible === true" v-for="(contact,index) in contacts"
                                     :key="contact.name+contact.avatar" class="row bg-white py-2">
                                     <div @click="changeConversation(index)"
                                         class="col d-flex align-items-center contact clickable">

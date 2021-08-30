@@ -131,13 +131,20 @@ const root = new Vue({
             };
             this.contacts[this.currentContact].messages.push(message);
         },
-        searchAndShowInContactList(element) {
+        searchAndShowInContactList() {
             if (this.searchContact.trim() === "") {
-                return true;
+                this.contacts[this.currentContact].visible = true;
             }
-            const simpleSearch = this.searchContact.trim().toLowerCase();
-            element = element.toLowerCase();
-            return element.includes(simpleSearch);
+            const searchSimplefied = this.searchContact.trim().toLowerCase();
+
+            this.contacts.forEach(contact => {
+                const nameSimplefied = contact.name.toLowerCase();
+                if (nameSimplefied.includes(searchSimplefied)) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;
+                }
+            });
         }
     },
 })

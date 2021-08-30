@@ -8,11 +8,6 @@ const root = new Vue({
         currentContact: 0,
         searchContact: "",
         messageText: "",
-        autoAnswer: {
-            date: '10/01/2020 15:30:55',
-            message: "Ok",
-            status: 'received',
-        },
         user: {
             name: 'Francesco',
             avatar: '_io',
@@ -123,6 +118,7 @@ const root = new Vue({
         sendMessage() {
             if (!this.messageText) return;
             this.addMessageInArray(this.messageText, "sent");
+            this.messageText = "";
             setTimeout(() => {
                 this.addMessageInArray("Ok", "received");
             }, 1000)
@@ -135,23 +131,6 @@ const root = new Vue({
             };
             this.contacts[this.currentContact].messages.push(message);
         },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         searchAndShowInContactList(element) {
             if (this.searchContact.trim() === "") {
                 return true;
@@ -162,41 +141,3 @@ const root = new Vue({
         }
     },
 })
-
-
-
-/*
-
- contacts.forEach(singleContact => {
-                for (property in singleContact) {
-                    if (singleContact[property] === true) {
-                        if (this.messageUser.message !== "") {
-                            singleContact.messages.push(this.messageUser);
-                            setTimeout(() => {
-                                singleContact.messages.push(this.autoAnswer);
-                            }, 1000)
-                        }
-                    }
-                }
-            })
-
-
-
-*/
-
-
-
-
-/*
-
- const messageUser = {
-                date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-                message: this.messageText,
-                status: "sent",
-            };
-            this.contacts[this.currentContact].messages.push(messageUser);
-
-
-
-
-*/

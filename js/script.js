@@ -109,11 +109,17 @@ const root = new Vue({
         changeConversation(index) {
             this.currentContact = index;
         },
-        /*  showLastSeen() {
-             const contactFocused = this.contacts[this.currentContact].messages;
-             const lastSeenOfContactFocused = contactFocused[messages.length - 1];
-             return lastSeenOfContactFocused.date;
-         }, */
+        showLastSeen() {
+            const messages = this.contacts[this.currentContact].messages;
+            const lastMessage = messages[messages.length - 1];
+            return lastMessage.date;
+
+
+
+            const contactFocused = this.contacts[this.currentContact].messages;
+            const lastSeenOfContactFocused = contactFocused[messages.length - 1];
+            return lastSeenOfContactFocused.date;
+        },
 
         sendMessage() {
             if (!this.messageText) return;

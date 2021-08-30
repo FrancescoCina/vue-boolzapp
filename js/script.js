@@ -110,9 +110,9 @@ const root = new Vue({
             this.currentContact = index;
         },
         /*  showLastSeen() {
-             let contactFocused = this.contacts[this.currentContact].this.messages;
-             const lastSeenOfContactFocused = contactFocused[messages.length - 1].date;
-             return lastSeenOfContactFocused;
+             const contactFocused = this.contacts[this.currentContact].messages;
+             const lastSeenOfContactFocused = contactFocused[messages.length - 1];
+             return lastSeenOfContactFocused.date;
          }, */
 
         sendMessage() {
@@ -148,6 +148,16 @@ const root = new Vue({
         },
         deleteMessage(index) {
             this.contacts[this.currentContact].messages.splice(index, 1)
-        }
+        },
+        showLastMessage(contact) {
+            const messages = contact.messages;
+            const lastMessage = messages[messages.length - 1];
+            return lastMessage.message;
+        },
+        showLastDate(contact) {
+            const messages = contact.messages;
+            const lastMessage = messages[messages.length - 1];
+            return lastMessage.date;
+        },
     },
 })

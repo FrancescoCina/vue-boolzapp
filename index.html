@@ -70,13 +70,14 @@
                             <!-- Contacts List -->
                             <section id="contact-list" class="h-remaining container">
                                 <div v-if="contact.visible === true" v-for="(contact,index) in contacts"
-                                    :key="contact.name+contact.avatar" class="row bg-white py-2">
-                                    <div @click="changeConversation(index)"
-                                        class="col d-flex align-items-center contact clickable">
+                                    :key="contact.name+contact.avatar" class="row py-2 contact clickable">
+                                    <div @click="changeConversation(index)" class="col d-flex align-items-center">
                                         <img :src="`./img/avatar${contact.avatar}.jpg`" class="img-fluid rounded-circle"
                                             :alt="contact.name" width="50">
                                         <h4 class="ms-2">{{contact.name}}</h4>
                                     </div>
+                                    <div><small class="grey">{{ showLastDate(contact) }}</small></div>
+                                    <p class="grey">{{ showLastMessage(contact) }}</p>
                                 </div>
                             </section>
                         </div>

@@ -7,8 +7,9 @@ const root = new Vue({
     data: {
         classChatSearchBox: "d-none",
         classSwtichOffSearchButton: "d-inline-block",
+        classOfLastSeen: "d-inline-block",
+        classOfTyping: "d-none",
         searchTextChat: "",
-        areInResearch: true,
         currentContact: 0,
         searchContact: "",
         messageText: "",
@@ -123,9 +124,13 @@ const root = new Vue({
             if (!this.messageText) return;
             this.addMessageInArray(this.messageText, "sent");
             this.messageText = "";
+            this.classOfLastSeen = "d-none";
+            this.classOfTyping = "d-inline-block";
             setTimeout(() => {
                 this.addMessageInArray("Ok", "received");
-            }, 1000)
+                this.classOfLastSeen = "d-inline-block";
+                this.classOfTyping = "d-none";
+            }, 3000)
         },
         addMessageInArray(text, status) {
             const message = {
@@ -167,20 +172,34 @@ const root = new Vue({
             this.classChatSearchBox = "d-block";
             this.classSwtichOffSearchButton = "d-none";
         },
-        researchInChat() {
-            if (!this.searchTextChat) {
-                this.areInResearch = true;
-            };
+        researchInChat(newArrayMessages) {
+            if (!this.searchTextChat) return;
             this.searchTextChat = this.searchTextChat.toLowerCase();
             const messages = this.contacts[this.currentContact].messages;
-            messages.forEach(msg => {
+            var messagesFiltered = [];
+            messages.forEach(msg, index => {
+                console.dir(msg);
                 if (msg.message.includes(this.searchTextChat)) {
-                    console.log(msg.message);
-                    this.areInResearch = true;
-                } else {
-                    this.areInResearch = false;
+                    messagesFiltered.push(msg);
+                    console.log(messagesFiltered);
                 }
             });
-        }
+            newArrayMessages = messagesFiltered;
+        },
+        /*  researchInChat() {
+             if (!this.searchTextChat) {
+                 this.areInResearch = true;
+             };
+             this.searchTextChat = this.searchTextChat.toLowerCase();
+             const messages = this.contacts[this.currentContact].messages;
+             messages.forEach(msg => {
+                 if (msg.message.includes(this.searchTextChat)) {
+                     console.log(msg.message);
+                     this.areInResearch = true;
+                 } else {
+                     this.areInResearch = false;
+                 }
+             });
+         } */
     },
 })

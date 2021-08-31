@@ -5,6 +5,10 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: "#root",
     data: {
+        classChatSearchBox: "d-none",
+        classSwtichOffSearchButton: "d-inline-block",
+        searchTextChat: "",
+        areInResearch: true,
         currentContact: 0,
         searchContact: "",
         messageText: "",
@@ -113,12 +117,6 @@ const root = new Vue({
             const messages = this.contacts[this.currentContact].messages;
             const lastMessage = messages[messages.length - 1];
             return lastMessage.date;
-
-
-
-            const contactFocused = this.contacts[this.currentContact].messages;
-            const lastSeenOfContactFocused = contactFocused[messages.length - 1];
-            return lastSeenOfContactFocused.date;
         },
 
         sendMessage() {
@@ -165,5 +163,24 @@ const root = new Vue({
             const lastMessage = messages[messages.length - 1];
             return lastMessage.date;
         },
+        openChatSearchBox() {
+            this.classChatSearchBox = "d-block";
+            this.classSwtichOffSearchButton = "d-none";
+        },
+        researchInChat() {
+            if (!this.searchTextChat) {
+                this.areInResearch = true;
+            };
+            this.searchTextChat = this.searchTextChat.toLowerCase();
+            const messages = this.contacts[this.currentContact].messages;
+            messages.forEach(msg => {
+                if (msg.message.includes(this.searchTextChat)) {
+                    console.log(msg.message);
+                    this.areInResearch = true;
+                } else {
+                    this.areInResearch = false;
+                }
+            });
+        }
     },
 })

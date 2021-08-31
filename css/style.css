@@ -102,6 +102,13 @@ li{
     background-image: url(../img/mine.jpg);
 }
 
+
+.bg-img-chat-menu-2{
+    background-image: url(../img/nocurrentcontact.png);
+    background-position: center;
+    background-size: cover;
+}
+
 .rounded-3px{
     border-radius: 3px;
 }

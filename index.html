@@ -113,7 +113,7 @@
                                 </div>
                             </header>
                             <!-- Chat Body -->
-                            <main class="row h-remaining bg-img-chat-menu overflow-y-auto">
+                            <main class="row h-remaining overflow-y-auto" :class="changeBgImageChat()">
                                 <div class="col-12">
                                     <div class="row pt-5 px-5" v-for="(msg,index) in contacts[currentContact].messages"
                                         :key="msg.status+index" :class="changePositionMessage(msg.status)">
@@ -154,3 +154,6 @@
 </body>
 
 </html>
+
+
+<!-- :class="changeBgImageChat() -->

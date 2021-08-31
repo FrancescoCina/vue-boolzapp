@@ -186,20 +186,12 @@ const root = new Vue({
             });
             newArrayMessages = messagesFiltered;
         },
-        /*  researchInChat() {
-             if (!this.searchTextChat) {
-                 this.areInResearch = true;
-             };
-             this.searchTextChat = this.searchTextChat.toLowerCase();
-             const messages = this.contacts[this.currentContact].messages;
-             messages.forEach(msg => {
-                 if (msg.message.includes(this.searchTextChat)) {
-                     console.log(msg.message);
-                     this.areInResearch = true;
-                 } else {
-                     this.areInResearch = false;
-                 }
-             });
-         } */
+        changeBgImageChat() {
+            if (this.currentContact > 4) {
+                return "bg-img-chat-menu-2";
+            } else {
+                return "bg-img-chat-menu";
+            }
+        }
     },
 })
